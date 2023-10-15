@@ -6,7 +6,7 @@ import User from "../assets/user.svg?react";
 const Header = () => {
   return (
     <header>
-        <nav className="flex justify-end gap-8 items-center h-14 w-screen px-4 shadow">
+        <nav className="flex justify-end gap-8 items-center h-14 w-full px-4 shadow">
             <div className="relative">
                 <Search className="absolute top-3 left-3"/>
                 <input type="text" placeholder="Search items..." className="bg-[#FBF3F3] w-52 pl-9 py-2.5 text-xs border border-[#E4E0E0] rounded-md"/>
