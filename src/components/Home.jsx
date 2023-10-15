@@ -2,27 +2,29 @@ import { useEffect, useState } from "react";
 import CategorySlider from "./CategorySlider";
 import Slider from "./Slider";
 import ProductCard from "./ProductCard";
+import useFetch from "../Hooks/useFetch";
 
 const Home = () => {
-  const [products, setProducts] = useState(null);
+  const [category, setCategory] = useState(null);
+  const {data, loading, error, request} = useFetch();
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
-    .then((res) => res.json())
-    .then((json) => setProducts(json)).catch((err) => console.log(err));
+    async function fetchData() {
+      console.log(category)
+       await request(`http://localhost:5000/products${category? `/?category=${category}`: " "}`, {});
+    }
 
-    console.log(products)
-  }, [])
+    fetchData();
 
-  console.log(products)
+  }, [category])
 
   return (
     <main className="w-screen">
         <Slider/>
-        <CategorySlider/>
+        <CategorySlider setCategory={setCategory}/>
         <section className="flex justify-center mt-8 w-screen">
           <div className="grid grid-cols-products w-full max-w-7xl">
-              {products && products.map((product) => <ProductCard key={product.id} {...product}/>)}
+              {data && data.map((product) => <ProductCard key={product.id} {...product}/>)}
             </div>
         </section>
     </main>

@@ -5,7 +5,6 @@ import { FreeMode, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import { Link } from 'react-router-dom';
 
 const cards = [
   {
@@ -38,7 +37,7 @@ const cards = [
   },
 ]
 
-const CategorySlider = () => {
+const CategorySlider = ({ setCategory }) => {
   return (
     <div className='bg-[#EBEEF1] pl-4 pb-4'>
         <p className='mb-4 font-bold'>Categories</p>
@@ -78,9 +77,9 @@ const CategorySlider = () => {
         className="mySwiper"
       >
         {cards.map(({title, img}) => <SwiperSlide key={title}>
-          <Link to={`/?category=${title}`}>
-            <CategoryCard title={title} img={img}/>
-          </Link>
+          <div>
+            <CategoryCard setCategory={setCategory} title={title} img={img}/>
+          </div>
           </SwiperSlide>)
         }
         
