@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .categoryCard {
+        @apply flex flex-col bg-white items-center justify-center gap-2 w-[120px] h-[140px] rounded-md shadow-md hover:border-[#2D80CC] hover:border ;
+    }
+}
