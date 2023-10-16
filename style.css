@@ -6,4 +6,16 @@
     .categoryCard {
         @apply flex flex-col bg-white items-center justify-center gap-2 w-[120px] h-[140px] rounded-md shadow-md hover:border-[#2D80CC] hover:border ;
     }
+
+    .productCard {
+        @apply flex flex-col items-start gap-2 px-2 w-[140px] h-[210px] m-6 shadow-md rounded-md  hover:border-[#2D80CC] hover:border text-center;
+    }
+
+    .productImage {
+        @apply w-[120px] h-[120px];
+    }
+
+    .skeletonText {
+        @apply bg-[#D3D2D2] h-3 w-11/12;
+    }
 }

@@ -3,6 +3,7 @@ import CategorySlider from "./CategorySlider";
 import Slider from "./Slider";
 import ProductCard from "./ProductCard";
 import useFetch from "../Hooks/useFetch";
+import SkeletonProduct from "./SkeletonProduct";
 
 const Home = () => {
   const [category, setCategory] = useState(null);
@@ -10,8 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchData() {
-      console.log(category)
-       await request(`http://localhost:5000/products${category? `/?category=${category}`: " "}`, {});
+       await request(`http://localhost:5000/products${category? `/?category=${category}`: ""}`, {});
     }
 
     fetchData();
@@ -24,7 +24,7 @@ const Home = () => {
         <CategorySlider setCategory={setCategory}/>
         <section className="flex justify-center mt-8 w-screen">
           <div className="grid grid-cols-products w-full max-w-7xl">
-              {data && data.map((product) => <ProductCard key={product.id} {...product}/>)}
+              {loading? [...Array(16).keys()].map((i) => <SkeletonProduct key={i}/>) : data && data.map((product) => <ProductCard key={product.id} {...product}/>)}
             </div>
         </section>
     </main>
