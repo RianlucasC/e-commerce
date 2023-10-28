@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        // Simple 16 column grid
         'products': 'repeat(auto-fill, 154px)',
       }
     },

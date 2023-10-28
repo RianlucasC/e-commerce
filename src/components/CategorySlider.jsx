@@ -40,7 +40,7 @@ const cards = [
 const CategorySlider = ({ setCategory }) => {
   return (
     <div className='bg-[#EBEEF1] pl-4 pb-4'>
-        <p className='mb-4 font-bold'>Categories</p>
+        <p className='mb-4 font-bold'>Categorias</p>
 
         <Swiper
         slidesPerView={1}

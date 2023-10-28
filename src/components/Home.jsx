@@ -19,14 +19,17 @@ const Home = () => {
   }, [category])
 
   return (
-    <main className="w-screen">
+    <main>
         <Slider/>
         <CategorySlider setCategory={setCategory}/>
-        <section className="flex justify-center mt-8 w-screen">
-          <div className="grid grid-cols-products w-full max-w-7xl">
-              {loading? [...Array(16).keys()].map((i) => <SkeletonProduct key={i}/>) : data && data.map((product) => <ProductCard key={product.id} {...product}/>)}
-            </div>
+        { error ? <div className="flex h-36 items-center justify-center text-red-500">Error</div> 
+        :
+        <section className="mt-8 w-full">
+          <div className="grid grid-cols-products justify-center w-full max-w-7xl">
+            {loading? [...Array(16).keys()].map((i) => <SkeletonProduct key={i}/>) : data && data.map((product) => <ProductCard key={product.id} {...product}/>)}
+          </div>
         </section>
+        }
     </main>
   )
 }
