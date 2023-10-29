@@ -24,7 +24,7 @@
     }
 
     .buttonActive {
-        @apply w-[334px] cursor-no-drop p-2 rounded-md bg-[#0064D2] text-white;
+        @apply w-[334px] p-2 rounded-md bg-[#0064D2] text-white;
     }
 
 
