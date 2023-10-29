@@ -24,7 +24,7 @@ const cards = [
     img: 'https://images-na.ssl-images-amazon.com/images/I/41dxVVHRNWL._AC_UL100_SR100,100_.jpg'
   },
   {
-    title: 'Accessories',
+    title: 'Acessories',
     img: 'https://images-na.ssl-images-amazon.com/images/I/61WUcZDwc+L._AC_UL100_SR100,100_.jpg'
   },
   {
