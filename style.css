@@ -27,6 +27,9 @@
         @apply w-[334px] p-2 rounded-md bg-[#0064D2] text-white;
     }
 
+    .imgSmallSkeleton {
+        @apply w-20 h-20 bg-[#D3D2D2] rounded-lg;
+    }
 
     .mobileButton {
         @apply w-full flex flex-col gap-2 p-4 md:hidden border-t z-50 bottom-0 fixed bg-white items-center;

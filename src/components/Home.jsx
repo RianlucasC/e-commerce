@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchData() {
-       await request(`http://localhost:5000/products${category? `/?category=${category}`: ""}`, {});
+       await request(`https://rianapiecommerce.onrender.com/products${category? `/?category=${category}`: ""}`, {});
     }
 
     fetchData();
