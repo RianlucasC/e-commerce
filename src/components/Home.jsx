@@ -24,11 +24,13 @@ const Home = () => {
         <CategorySlider setCategory={setCategory}/>
         { error ? <div className="flex h-36 items-center justify-center text-red-500">Error</div> 
         :
-        <section className="mt-8 w-full">
+        <div className="flex justify-center w-full">
+          <section className="mt-8 w-full max-w-5xl">
           <div className="grid grid-cols-products justify-center w-full max-w-7xl">
             {loading? [...Array(16).keys()].map((i) => <SkeletonProduct key={i}/>) : data && data.map((product) => <ProductCard key={product.id} {...product}/>)}
           </div>
         </section>
+        </div>
         }
     </main>
   )
